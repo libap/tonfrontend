@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TON Blockchain Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>TON Blockchain Tracker</h1>
+        <div class="input-section">
+            <input type="text" id="walletAddress" placeholder="Enter Wallet Address (e.g., Telegram, Tonkeeper)">
+            <input type="text" id="tokenAddress" placeholder="Enter Token Address">
+            <button id="fetchData">Fetch Data</button>
+        </div>
+        <div id="tokenInfo" class="token-info hidden">
+            <h2>Token Information</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="label">Current Price:</span>
+                    <span id="currentPrice" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">All-Time High:</span>
+                    <span id="allTimeHigh" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">TVL:</span>
+                    <span id="tvl" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Volume:</span>
+                    <span id="volume" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Max % Since Creation:</span>
+                    <span id="maxPercentage" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Current % Since Creation:</span>
+                    <span id="currentPercentage" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">24h Change:</span>
+                    <span id="change24h" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Balance:</span>
+                    <span id="balance" class="value"></span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Available Tokens:</span>
+                    <span id="availableTokens" class="value"></span>
+                </div>
+            </div>
+        </div>
+        <div id="chartContainer" class="chart-container hidden">
+            <canvas id="priceChart"></canvas>
+        </div>
+        <div id="transactionHistory" class="transaction-history hidden">
+            <h2>Transaction History</h2>
+            <table id="transactionTable">
+                <thead>
+                    <tr>
+                        <th data-column="date">Date</th>
+                        <th data-column="quantity">Quantity</th>
+                        <th data-column="type">Type</th>
+                        <th data-column="address">Address</th>
+                        <th data-column="price">Price (USDT)</th>
+                        <th data-column="currentValue">Current Value (USDT)</th>
+                        <th data-column="percentageChange">% Change</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
